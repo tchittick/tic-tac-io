@@ -1,0 +1,16 @@
+{
+  "name": "tic-tac-io",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node-dev server.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.9.2",
+    "express": "^4.10.2",
+    "jade": "^1.7.0",
+    "method-override": "^2.3.0",
+    "mysql": "^2.5.3",
+    "socket.io": "^1.2.0"
+  }
+}
