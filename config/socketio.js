@@ -23,7 +23,7 @@ function socketIO(app, io){
       }
 
       if(socket.board.getWinner()){
-        return cb(socket.board.getWinner(), null);
+        return cb({ err: 4, msg: 'This can\'t be happening, Goodbye.'}, null);
       }
 
       return cb(null, data);
@@ -32,12 +32,15 @@ function socketIO(app, io){
     socket.on('compMove', function(cb){
       mm.buildTree(socket.board, 2, function(play){
         socket.board.move(2, play);
-        console.log(socket.board.gamestate);
         if(socket.board.getWinner()){
-          return cb(socket.board.getWinner(), play);
-
+          return cb({ err: 3, msg: 'I win, as usual'}, play);
         }
-        cb(null, play);
+
+        if(socket.board.isFull()){
+          return cb({err: 2, msg: 'cat\'s game'}, play);
+        }
+        
+        return cb(null, play);
       })
     })
 
