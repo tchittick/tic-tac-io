@@ -1,6 +1,7 @@
 (function init(){
   var socket = io();
   var whoFirst;
+  var cassandraPhrases = [];
 
   for(var i=0; i<9; i++){
     var btn = document.getElementById(i);
@@ -27,14 +28,21 @@
   function btnClick(){
     var index = this.id;
     socket.emit('playerMove', index, function(err, data){
+
       if(err){
-        alert(err.msg);
-        return newGame();
+        cassandraPhrases.shift(err.msg);
+        for(var n=0; n<4; n++){
+          document.getElementById('outputBox' + n).innerHTML = cassandraPhrases[n];
+        }
+        if(cassandraPhrases.length > 3){
+          cassandraPhrases.pop();
+        }
       }
 
-      if(data == index){
+
+      if(data == index && err == null){
         document.getElementById(index).innerHTML = 'X';
-        socket.emit('compMove', function(err, move){
+        socket.emit('compMove', function(err, move, phrase){
           document.getElementById(move).innerHTML = 'O';
           if(err){
             alert(err.msg);

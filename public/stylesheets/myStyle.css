@@ -1,0 +1,43 @@
+
+body{
+  background-color: gray;
+}
+.header {
+  font: bold italic large serif;
+  font-size: 50px;
+}
+.myBtn{
+  width: 50px;
+  height: 50px;
+  font-size: 175%;
+}
+.game-wrap {
+  text-align: center;
+}
+
+.container-bottom {
+  margin-top: 1em;
+}
+#output {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background-color: green;
+}
+#outputBox0 {
+  background-color: green;
+  opacity: 0.8;
+}
+#outputBox1 {
+  background-color: green;
+  opacity: 0.7;
+}
+#outputBox2 {
+  background-color: green;
+  opacity: 0.5;
+}
+#outputBox3 {
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background-color: green;
+  opacity: 0.4;
+}

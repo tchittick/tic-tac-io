@@ -2,19 +2,38 @@ doctype html
 html
   head
     title tic-tac-io
+    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css")
+    link(rel="stylesheet" href="stylesheets/myStyle.css")
   body
-    div this is a tic tac toe
-    .row
-      button#0 0
-      button#1 1
-      button#2 2
-    .row
-      button#3 3
-      button#4 4
-      button#5 5
-    .row
-      button#6 6
-      button#7 7
-      button#8 8
+    .container
+      .header
+        div tic-tac-io 
+      .mid-container
+        .game-wrap
+          .row
+            .btn-group
+              #0.btn.btn-warning.myBtn 0
+              #1.btn.btn-warning.myBtn 1
+              #2.btn.btn-warning.myBtn 2
+            //.row.col-xs-6.col-xs-offset-2
+          .row
+            .btn-group
+              #3.btn.btn-warning.myBtn 3
+              #4.btn.btn-warning.myBtn 4
+              #5.btn.btn-warning.myBtn 5
+              //.row.col-xs-6.col-xs-offset-2
+          .row
+            .btn-group
+              #6.btn.btn-warning.myBtn 6
+              #7.btn.btn-warning.myBtn 7
+              #8.btn.btn-warning.myBtn 8
+        //.rightContainer.col-xs-3
+      //.container-bottom.col-xs-12
+      //  #output      Cassandra Says:
+      //  #outputBox0 test
+      //  #outputBox1 test 2
+      //  #outputBox2 tesdf 
+      //  #outputBox3 sdf ae 
+
     script(src='/socket.io/socket.io.js')
     script(src='javascripts/tictac.js')
