@@ -2,6 +2,13 @@
   "name": "tic-tac-io",
   "version": "0.0.1",
   "private": true,
+  "author": "Taylor Chittick",
+  "maintainers": [
+    {
+      "name": "Taylor Chittick",
+      "email": "taylor.chittick@gmail.com"
+    }
+  ],
   "scripts": {
     "start": "node-dev server.js"
   },
